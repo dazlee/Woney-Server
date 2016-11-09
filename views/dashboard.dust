@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FinChat</title>
+
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.calendar.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="css/temp/custom.min.css" rel="stylesheet">
+
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"> <span>FinChat</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="images/temp/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>您好,</span>
+                <h2>楊大爐</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>一般管理員</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> 儀表板 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">首頁</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> 投資效益 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="form.html">General Form</a></li>
+                      <li><a href="form_advanced.html">Advanced Components</a></li>
+                      <li><a href="form_validation.html">Form Validation</a></li>
+                      <li><a href="form_wizards.html">Form Wizard</a></li>
+                      <li><a href="form_upload.html">Form Upload</a></li>
+                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-desktop"></i> 語意分析 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="general_elements.html">General Elements</a></li>
+                      <li><a href="media_gallery.html">Media Gallery</a></li>
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="icons.html">Icons</a></li>
+                      <li><a href="glyphicons.html">Glyphicons</a></li>
+                      <li><a href="widgets.html">Widgets</a></li>
+                      <li><a href="invoice.html">Invoice</a></li>
+                      <li><a href="inbox.html">Inbox</a></li>
+                      <li><a href="calendar.html">Calendar</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> 開戶比例 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="/logout">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="images/temp/img.jpg" alt="">楊大爐
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-envelope-o"></i>
+                    <span class="badge bg-green">6</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/temp/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/temp/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/temp/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/temp/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          <div class="row tile_count">
+            <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 客戶數量</span>
+              <div class="count">2,500</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>4% </i> 自從上禮拜</span>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-clock-o"></i> 交易金額</span>
+              <div class="count">12,355</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 自從上禮拜</span>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 開戶量</span>
+              <div class="count green">200</div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 自從上禮拜</span>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
+              <span class="count_top"><i class="fa fa-user"></i> 線上使用者數量</span>
+              <div class="count">4,567</div>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> 自從上禮拜</span>
+            </div>
+          </div>
+          <!-- /top tiles -->
+
+          <div style="font-size: 28px; padding-bottom: 4px;">
+              語意分析結果：輿論偏好
+          </div>
+          <div class="ui grid" style="padding-bottom: 20px;">
+              <div class="four wide column">
+                  <div class="ui card">
+                      <div class="content">
+                        <div class="right floated meta">
+                            <i class="fa fa-frown-o red" style="font-size: 36px;" aria-hidden="true"></i>
+                        </div>
+                        <span style="font-size: 20px;">證券</span>
+                      </div>
+                      <div class="image">
+                        <img>
+                      </div>
+                      <div class="content">
+                          <div class="ui very relaxed middle aligned divided list">
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-frown-o red" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">台積電</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">5,732 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">聯發科</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">5,216 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-frown-o red" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">宏達電</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">4,518 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">大立光</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">3,996 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-frown-o red" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">兆豐金</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">3,200 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="four wide column">
+                  <div class="ui card">
+                      <div class="content">
+                        <div class="right floated meta">
+                            <i class="fa fa-smile-o green" style="font-size: 36px;" aria-hidden="true"></i>
+                        </div>
+                        <span style="font-size: 20px;">投資</span>
+                      </div>
+                      <div class="image">
+                        <img>
+                      </div>
+                      <div class="content">
+                          <div class="ui very relaxed middle aligned divided list">
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">黃金</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">2,921 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">原油</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">2,147 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">美金</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">1,604 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">房地產</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">1,306 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">鋼鐵</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">988 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="four wide column">
+                  <div class="ui card">
+                      <div class="content">
+                        <div class="right floated meta">
+                            <i class="fa fa-meh-o yellow" style="font-size: 36px;" aria-hidden="true"></i>
+                        </div>
+                        <span style="font-size: 20px;">基金</span>
+                      </div>
+                      <div class="image">
+                        <img>
+                      </div>
+                      <div class="content">
+                          <div class="ui very relaxed middle aligned divided list">
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">貝萊德世界礦業基金</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">4,328 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-frown-o red" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">富蘭克林坦伯頓全球投資系列－生技領航基金</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">4,146 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">聯博－全球高收益債券基金ＡＴ股</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">3,941 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">駿利環球生命科技基金Ａ</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">3,225 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-frown-o red" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">貝萊德世界黃金基金</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">2,875 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="four wide column">
+                  <div class="ui card">
+                      <div class="content">
+                        <div class="right floated meta">
+                            <i class="fa fa-smile-o light-green" style="font-size: 36px;" aria-hidden="true"></i>
+                        </div>
+                        <span style="font-size: 20px;">保險</span>
+                      </div>
+                      <div class="image">
+                        <img>
+                      </div>
+                      <div class="content">
+                          <div class="ui very relaxed middle aligned divided list">
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">健康醫療</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">7,457 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">癌症保障</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">6,775 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">重疾保障</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">6,155 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-smile-o light-green" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">壽險保障</div>
+                                <div class="description red" style="font-size: 14px; margin-top:4px;">5,990 <i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                            <div class="item">
+                                <div class="right floated content">
+                                    <i class="fa fa-meh-o yellow" style="font-size: 20px;" aria-hidden="true"></i>
+                                </div>
+                              <div class="content">
+                                <div class="header" style="font-size: 16px;">意外保障</div>
+                                <div class="description light-green" style="font-size: 14px; margin-top:4px;">5,596 <i class="fa fa-arrow-down" aria-hidden="true"></i></div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>大代誌 <small>熱門新聞</small></h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="dashboard-widget-content">
+
+                    <ul class="list-unstyled timeline widget">
+                      <li>
+                        <div class="block">
+                          <div class="block_content">
+                            <h2 class="title">
+                                              <a>海基會人事地震 四主管將換人</a>
+                                          </h2>
+                            <div class="byline">
+                              <span>5分鐘前</span></a>
+                            </div>
+                            <p class="excerpt">海基會董事長田弘茂、秘書長張天欽上任還沒滿月，海基會人事將大地震，據了解，會內五個處就有四個處的正副主管將異動，主任秘書也將換人。 <a>按此讀更多</a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="block">
+                          <div class="block_content">
+                            <h2 class="title">
+                                              <a>國慶大會 陳水扁 馬英九相隔50公尺</a>
+                                          </h2>
+                            <div class="byline">
+                              <span>10分鐘前</span>
+                            </div>
+                            <p class="excerpt">總統府今天進行國慶大會活動預演，內政部次長花敬群表示，前總統陳水扁出席與否，籌備委員會已把可以提供的醫療服務告知法務部矯正署，陳前總統若出席，將安排北一區，方便輪椅進出。 <a>按我讀更多</a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="block">
+                          <div class="block_content">
+                            <h2 class="title">
+                                              <a>洪秀柱賣房籌黨工薪水 吳敦義：很感動</a>
+                                          </h2>
+                            <div class="byline">
+                              <span>25分鐘前</span>
+                            </div>
+                            <p class="excerpt">國民黨主席洪秀柱今天說，不當黨產委員會先入為主的追殺一個合法政黨，國民黨不會屈服，計畫將以特別黨費的方式來募款，為籌措基層黨工薪水，「哪怕賣房子也在所不惜」。對此，前副總統吳敦義表示很感動 <a>按我讀更多</a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="block">
+                          <div class="block_content">
+                            <h2 class="title">
+                                              <a>川普為侮辱女性道歉 共和黨內出現換將聲浪</a>
+                                          </h2>
+                            <div class="byline">
+                              <span>40分鐘前</span>
+                            </div>
+                            <p class="excerpt">美國共和黨總統候選人川普（Donald Trump）11年前一段只要有名，就可以對女人為所欲為的談話7日被揭露後，後續政治效應逐漸引爆。共和黨內已出現要川普退選，換人上陣的聲浪。 <a>按我讀更多</a>
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-8 col-sm-8 col-xs-12">
+
+
+
+              <div class="row">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>大代誌 <small>關鍵字</small></h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                      <div class="dashboard-widget-content">
+                        <svg width="539" height="539" class="bubble"><g class="node" transform="translate(257.8525695608308,276.3834614884313)"><title>亞太區 (23): 56,250</title><circle r="50.02844654089829" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">亞太區</text></g><g class="node" transform="translate(348.88860456000907,276.3834614884313)"><title>南海 (37): 35,181</title><circle r="39.56487920572422" style="fill: rgb(255, 63, 0);"></circle><text dy=".3em" style="text-anchor: middle;">南海</text></g><g class="node" transform="translate(312.78856507633634,208.7018481080567)"><title>5566 (13): 28,643</title><circle r="35.69973609741824" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">5566</text></g><g class="node" transform="translate(243.20961218267635,191.68040578441156)"><title>孫協志 (7): 26,732</title><circle r="34.48827560518136" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">孫協志</text></g><g class="node" transform="translate(185.3352106510832,231.03656195383923)"><title>台鐵 (25): 26,068</title><circle r="34.05725259022585" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">台鐵</text></g><g class="node" transform="translate(176.5227026997989,298.87904326109225)"><title>電競 (13): 24,345</title><circle r="32.912482685362704" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">電競</text></g><g class="node" transform="translate(218.7760463170664,350.84443190494005)"><title>立法院 (34): 23,915</title><circle r="32.620525032824155" style="fill: rgb(255, 63, 0);"></circle><text dy=".3em" style="text-anchor: middle;">立法院</text></g><g class="node" transform="translate(284.7510322410794,355.48048428972874)"><title>臉盆 (5): 23,121</title><circle r="32.0744384086922" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">臉盆</text></g><g class="node" transform="translate(349.4954193647299,348.9447922518141)"><title>李李仁 (7): 22,380</title><circle r="31.556279591599147" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">李李仁</text></g><g class="node" transform="translate(405.45627423945746,319.60916014742384)"><title>季後賽 (23): 20,477</title><circle r="30.184842863604334" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">季後賽</text></g><g class="node" transform="translate(417.78502861649156,259.2372241080799)"><title>tvbs (18): 20,214</title><circle r="29.990374217236386" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">tvbs</text></g><g class="node" transform="translate(379.8647264238041,210.94103324396605)"><title>道歉 (38): 20,188</title><circle r="29.971080642812232" style="fill: rgb(255, 63, 0);"></circle><text dy=".3em" style="text-anchor: middle;">道歉</text></g><g class="node" transform="translate(353.54099150549695,156.27202925063796)"><title>星光大道 (13): 19,245</title><circle r="29.26272135628377" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">星光大道</text></g><g class="node" transform="translate(294.881606285775,145.0016425278987)"><title>宇宙 (7): 18,936</title><circle r="29.026847861312863" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">宇宙</text></g><g class="node" transform="translate(238.45592284073206,127.2384373152079)"><title>國軍救災 (4): 18,494</title><circle r="28.68607838832467" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">國軍救災</text></g><g class="node" transform="translate(188.19595985646112,157.78552534096022)"><title>沙崙 (4): 18,494</title><circle r="28.68607838832467" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">沙崙</text></g><g class="node" transform="translate(137.72716438233127,187.98633906217964)"><title>蜘蛛人 (4): 18,494</title><circle r="28.68607838832467" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">蜘蛛人</text></g><g class="node" transform="translate(123.01791975852004,244.48329138523442)"><title>中信金 (2): 17,938</title><circle r="28.251581484337002" style="fill: rgb(223, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">中信金</text></g><g class="node" transform="translate(114.12179758052861,301.5935852836767)"><title>毛弟 (5): 17,752</title><circle r="28.104728796073378" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">毛弟</text></g><g class="node" transform="translate(142.93593151583372,351.1199498716163)"><title>女人 (30): 17,308</title><circle r="27.751035785664353" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">女人</text></g><g class="node" transform="translate(177.21943258178652,396.37032415659684)"><title>記者會 (35): 17,092</title><circle r="27.577328742975972" style="fill: rgb(255, 63, 0);"></circle><text dy=".3em" style="text-anchor: middle;">記者會</text></g><g class="node" transform="translate(231.7233783870372,410.9211148181986)"><title>民進黨 (51): 16,864</title><circle r="27.392776304230477" style="fill: rgb(255, 31, 0);"></circle><text dy=".3em" style="text-anchor: middle;">民進黨</text></g><g class="node" transform="translate(287.3629278498248,415.9743331924741)"><title>陳瑩 (6): 16,424</title><circle r="27.033060874637055" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">陳瑩</text></g><g class="node" transform="translate(342.3120026107785,408.49240601721135)"><title>高溫 (10): 16,360</title><circle r="26.980339106513895" style="fill: rgb(255, 159, 0);"></circle><text dy=".3em" style="text-anchor: middle;">高溫</text></g><g class="node" transform="translate(394.0996546766618,388.9616746114661)"><title>起訴 (17): 16,293</title><circle r="26.92503539945227" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">起訴</text></g><g class="node" transform="translate(443.3514192346455,364.0906973967457)"><title>上床 (7): 16,151</title><circle r="26.807447415534334" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">上床</text></g><g class="node" transform="translate(463.49927569643387,312.85200452286074)"><title>楊謹 (7): 16,151</title><circle r="26.807447415534334" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">楊謹</text></g><g class="node" transform="translate(476.025559492335,259.2382751087108)"><title>楊謹華 (7): 16,151</title><circle r="26.807447415534334" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">楊謹華</text></g><g class="node" transform="translate(450.0011675737041,210.73929167286218)"><title>國民黨團 (4): 16,130</title><circle r="26.790013835326924" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">國民黨團</text></g><g class="node" transform="translate(417.3527451412906,167.05275372288148)"><title>父母 (47): 15,552</title><circle r="26.305640339895643" style="fill: rgb(255, 63, 0);"></circle><text dy=".3em" style="text-anchor: middle;">父母</text></g><g class="node" transform="translate(395.33546898597984,118.22778625547684)"><title>鐵軌 (6): 14,973</title><circle r="25.811317112003852" style="fill: rgb(255, 191, 0);"></circle><text dy=".3em" style="text-anchor: middle;">鐵軌</text></g><g class="node" transform="translate(345.4276871852613,100.41567952611027)"><title>看護 (9): 14,887</title><circle r="25.737084497607423" style="fill: rgb(255, 159, 0);"></circle><text dy=".3em" style="text-anchor: middle;">看護</text></g><g class="node" transform="translate(293.86701939164215,88.88729041886256)"><title>漫畫 (10): 14,791</title><circle r="25.653966467448267" style="fill: rgb(255, 159, 0);"></circle><text dy=".3em" style="text-anchor: middle;">漫畫</text></g><g class="node" transform="translate(244.06649256479693,71.85824612376743)"><title>國慶日 (22): 14,654</title><circle r="25.534881561114272" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">國慶日</text></g><g class="node" transform="translate(195.57556249029855,91.84587675503107)"><title>下雨 (14): 14,581</title><circle r="25.471200189952903" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">下雨</text></g><g class="node" transform="translate(150.42383718527373,117.56372315601357)"><title>英雄 (21): 14,101</title><circle r="25.048441558239407" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">英雄</text></g><g class="node" transform="translate(105.7508316712719,143.1131346384312)"><title>生產 (14): 14,015</title><circle r="24.971941291719723" style="fill: rgb(255, 127, 0);"></circle><text dy=".3em" style="text-anchor: middle;">生產</text></g><g class="node" transform="translate(82.67645142247991,188.98187373017288)"><title>lulu (5): 13,969</title><circle r="24.930926185683546" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">lulu</text></g><g class="node" transform="translate(68.73737486566654,238.35656550810904)"><title>日劇 (5): 13,969</title><circle r="24.930926185683546" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">日劇</text></g><g class="node" transform="translate(61.09791927781421,289.0891660894328)"><title>王勝偉 (5): 13,969</title><circle r="24.930926185683546" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">王勝偉</text></g><g class="node" transform="translate(74.22201727988354,338.68670730928545)"><title>納豆 (5): 13,969</title><circle r="24.930926185683546" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">納豆</text></g><g class="node" transform="translate(99.45786025591033,383.35560334122493)"><title>銘傳大學 (5): 13,969</title><circle r="24.930926185683546" style="fill: rgb(255, 223, 0);"></circle><text dy=".3em" style="text-anchor: middle;">銘傳大學</text></g><g class="node" transform="translate(130.84835694981038,423.91826482173906)"><title>演唱會 (23): 13,953</title><circle r="24.916644236105792" style="fill: rgb(255, 95, 0);"></circle><text dy=".3em" style="text-anchor: middle;">演唱會</text></g><g class="node" transform="translate(174.80210644326166,450.1767223761526)"><title>msg (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">msg</text></g><g class="node" transform="translate(224.0104898498036,464.04019922681886)"><title>mtv (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">mtv</text></g><g class="node" transform="translate(274.99335825814217,467.8360017417326)"><title>乳頭 (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">乳頭</text></g><g class="node" transform="translate(325.3446787834418,458.98131319651907)"><title>倒立 (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">倒立</text></g><g class="node" transform="translate(375.67571902332867,450.01206706069036)"><title>反酒駕 (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">反酒駕</text></g><g class="node" transform="translate(423.9007951880599,433.0414154297108)"><title>希爾 (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">希爾</text></g><g class="node" transform="translate(469.64498736728655,410.21314633754855)"><title>張鈞甯 (3): 13,868</title><circle r="24.840633695614212" style="fill: rgb(255, 255, 0);"></circle><text dy=".3em" style="text-anchor: middle;">張鈞甯</text></g></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <!-- start of weather widget -->
+                <!-- <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <h2>天氣預報</h2>
+                      <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                      </ul>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div class="temperature"><b>禮拜一</b>, 07:30 AM
+                            <span>F</span>
+                            <span><b>C</b></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="weather-icon">
+                            <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
+                          </div>
+                        </div>
+                        <div class="col-sm-8">
+                          <div class="weather-text">
+                            <h2>台北市 <br><i>多雲</i></h2>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12">
+                        <div class="weather-text pull-right">
+                          <h3 class="degrees">23</h3>
+                        </div>
+                      </div>
+
+                      <div class="clearfix"></div>
+
+                      <div class="row weather-days">
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">一</h2>
+                            <h3 class="degrees">25</h3>
+                            <canvas id="clear-day" width="32" height="32"></canvas>
+                            <h5>15 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">二</h2>
+                            <h3 class="degrees">25</h3>
+                            <canvas height="32" width="32" id="rain"></canvas>
+                            <h5>12 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">三</h2>
+                            <h3 class="degrees">27</h3>
+                            <canvas height="32" width="32" id="snow"></canvas>
+                            <h5>14 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">四</h2>
+                            <h3 class="degrees">28</h3>
+                            <canvas height="32" width="32" id="sleet"></canvas>
+                            <h5>15 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">五</h2>
+                            <h3 class="degrees">28</h3>
+                            <canvas height="32" width="32" id="wind"></canvas>
+                            <h5>11 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="col-sm-2">
+                          <div class="daily-weather">
+                            <h2 class="day">六</h2>
+                            <h3 class="degrees">26</h3>
+                            <canvas height="32" width="32" id="cloudy"></canvas>
+                            <h5>10 <i>km/h</i></h5>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div> -->
+                <!-- end of weather widget -->
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="dashboard_graph">
+
+                <div class="row x_title">
+                  <div class="col-md-6">
+                    <h3>下單頻率 <small>客戶每日下單金額和數量</small></h3>
+                  </div>
+                  <div class="col-md-6">
+                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <div id="placeholder33" style="height: 260px; display: none" class="demo-placeholder"></div>
+                  <div style="width: 100%;">
+                    <div id="canvas_dahs" class="demo-placeholder" style="width: 100%; height:270px;"></div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+                  <div class="x_title">
+                    <h2>最多交易股</h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div>
+                      <p>台積電</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p>台灣0050 ETF</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div>
+                      <p>中信金</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <p>富邦金</p>
+                      <div class="">
+                        <div class="progress progress_sm" style="width: 76%;">
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="clearfix"></div>
+              </div>
+            </div>
+
+          </div>
+          <br />
+
+          <div class="row">
+
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>最新下單金額</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>0050</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>120k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+
+                  <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>3240</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>53k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>0051</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>23k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>5540</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>3k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="widget_summary">
+                    <div class="w_left w_25">
+                      <span>0916</span>
+                    </div>
+                    <div class="w_center w_55">
+                      <div class="progress">
+                        <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w_right w_20">
+                      <span>1k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320 overflow_hidden">
+                <div class="x_title">
+                  <h2>投資產業比例</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <table class="" style="width:100%">
+                    <tr>
+                      <th style="width:37%;">
+                        <p>前五大</p>
+                      </th>
+                      <th>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                          <p class="">產業</p>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                          <p class="">比例</p>
+                        </div>
+                      </th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <canvas id="canvas1" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                      </td>
+                      <td>
+                        <table class="tile_info">
+                          <tr>
+                            <td>
+                              <p><i class="fa fa-square blue"></i>金融股 </p>
+                            </td>
+                            <td>30%</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><i class="fa fa-square green"></i>科技股 </p>
+                            </td>
+                            <td>10%</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><i class="fa fa-square purple"></i>能源股 </p>
+                            </td>
+                            <td>20%</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><i class="fa fa-square aero"></i>食品股 </p>
+                            </td>
+                            <td>15%</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p><i class="fa fa-square red"></i>醫療股 </p>
+                            </td>
+                            <td>30%</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title">
+                  <h2>快速設定</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="dashboard-widget-content">
+                    <ul class="quick-list">
+                      <li><i class="fa fa-calendar-o"></i><a href="#">設定</a>
+                      </li>
+                      <li><i class="fa fa-bars"></i><a href="#">訂閱人數</a>
+                      </li>
+                      <li><i class="fa fa-bar-chart"></i><a href="#">自動更新</a> </li>
+                      <li><i class="fa fa-line-chart"></i><a href="#">L1業績達成率</a>
+                      </li>
+                      <li><i class="fa fa-bar-chart"></i><a href="#">自動檢查</a> </li>
+                      <li><i class="fa fa-line-chart"></i><a href="#">L2業績達成率</a>
+                      </li>
+                      <li><i class="fa fa-area-chart"></i><a href="#">登出</a>
+                      </li>
+                    </ul>
+
+                    <div class="sidebar-widget">
+                      <h4>本月目標</h4>
+                      <canvas width="150" height="80" id="foo" class="" style="width: 160px; height: 100px;"></canvas>
+                      <div class="goal-wrapper">
+                        <span class="gauge-value pull-left">$</span>
+                        <span id="gauge-text" class="gauge-value pull-left">3,200</span>
+                        <span id="goal-text" class="goal-value pull-right">$5,000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="vendors/Flot/jquery.flot.js"></script>
+    <script src="vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="vendors/Flot/jquery.flot.time.js"></script>
+    <script src="vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="js/moment/moment.min.js"></script>
+    <script src="js/datepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="js/temp/custom.min.js"></script>
+
+    <script src="/semantic/semantic.min.calendar.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+
+    <!-- Flot -->
+    <script>
+      $(document).ready(function() {
+        var data1 = [
+          [gd(2012, 1, 1), 17],
+          [gd(2012, 1, 2), 74],
+          [gd(2012, 1, 3), 6],
+          [gd(2012, 1, 4), 39],
+          [gd(2012, 1, 5), 20],
+          [gd(2012, 1, 6), 85],
+          [gd(2012, 1, 7), 7]
+        ];
+
+        var data2 = [
+          [gd(2012, 1, 1), 82],
+          [gd(2012, 1, 2), 23],
+          [gd(2012, 1, 3), 66],
+          [gd(2012, 1, 4), 9],
+          [gd(2012, 1, 5), 119],
+          [gd(2012, 1, 6), 6],
+          [gd(2012, 1, 7), 9]
+        ];
+        $("#canvas_dahs").length && $.plot($("#canvas_dahs"), [
+          data1, data2
+        ], {
+          series: {
+            lines: {
+              show: false,
+              fill: true
+            },
+            splines: {
+              show: true,
+              tension: 0.4,
+              lineWidth: 1,
+              fill: 0.4
+            },
+            points: {
+              radius: 0,
+              show: true
+            },
+            shadowSize: 2
+          },
+          grid: {
+            verticalLines: true,
+            hoverable: true,
+            clickable: true,
+            tickColor: "#d5d5d5",
+            borderWidth: 1,
+            color: '#fff'
+          },
+          colors: ["rgba(38, 185, 154, 0.38)", "rgba(3, 88, 106, 0.38)"],
+          xaxis: {
+            tickColor: "rgba(51, 51, 51, 0.06)",
+            mode: "time",
+            tickSize: [1, "day"],
+            axisLabel: "Date",
+            axisLabelUseCanvas: true,
+            axisLabelFontSizePixels: 12,
+            axisLabelFontFamily: 'Verdana, Arial',
+            axisLabelPadding: 10
+          },
+          yaxis: {
+            ticks: 8,
+            tickColor: "rgba(51, 51, 51, 0.06)",
+          },
+          tooltip: false
+        });
+
+        function gd(year, month, day) {
+          return new Date(year, month - 1, day).getTime();
+        }
+      });
+    </script>
+    <!-- /Flot -->
+
+    <!-- JQVMap -->
+    <script>
+      $(document).ready(function(){
+        $('#world-map-gdp').vectorMap({
+            map: 'world_en',
+            backgroundColor: null,
+            color: '#ffffff',
+            hoverOpacity: 0.7,
+            selectedColor: '#666666',
+            enableZoom: true,
+            showTooltip: true,
+            values: sample_data,
+            scaleColors: ['#E6F2F0', '#149B7E'],
+            normalizeFunction: 'polynomial'
+        });
+      });
+    </script>
+    <!-- /JQVMap -->
+
+    <!-- Skycons -->
+    <script>
+      $(document).ready(function() {
+        var icons = new Skycons({
+            "color": "#73879C"
+          }),
+          list = [
+            "clear-day", "clear-night", "partly-cloudy-day",
+            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+            "fog"
+          ],
+          i;
+
+        for (i = list.length; i--;)
+          icons.set(list[i], list[i]);
+
+        icons.play();
+      });
+    </script>
+    <!-- /Skycons -->
+
+    <!-- Doughnut Chart -->
+    <script>
+      $(document).ready(function(){
+        var options = {
+          legend: false,
+          responsive: false
+        };
+
+        new Chart(document.getElementById("canvas1"), {
+          type: 'doughnut',
+          tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+          data: {
+            labels: [
+              "Symbian",
+              "Blackberry",
+              "Other",
+              "Android",
+              "IOS"
+            ],
+            datasets: [{
+              data: [15, 20, 30, 10, 30],
+              backgroundColor: [
+                "#BDC3C7",
+                "#9B59B6",
+                "#E74C3C",
+                "#26B99A",
+                "#3498DB"
+              ],
+              hoverBackgroundColor: [
+                "#CFD4D8",
+                "#B370CF",
+                "#E95E4F",
+                "#36CAAB",
+                "#49A9EA"
+              ]
+            }]
+          },
+          options: options
+        });
+      });
+    </script>
+    <!-- /Doughnut Chart -->
+
+    <!-- bootstrap-daterangepicker -->
+    <script>
+      $(document).ready(function() {
+
+        var cb = function(start, end, label) {
+          console.log(start.toISOString(), end.toISOString(), label);
+          $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+        };
+
+        var optionSet1 = {
+          startDate: moment().subtract(29, 'days'),
+          endDate: moment(),
+          minDate: '01/01/2012',
+          maxDate: '12/31/2015',
+          dateLimit: {
+            days: 60
+          },
+          showDropdowns: true,
+          showWeekNumbers: true,
+          timePicker: false,
+          timePickerIncrement: 1,
+          timePicker12Hour: true,
+          ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+          },
+          opens: 'left',
+          buttonClasses: ['btn btn-default'],
+          applyClass: 'btn-small btn-primary',
+          cancelClass: 'btn-small',
+          format: 'MM/DD/YYYY',
+          separator: ' to ',
+          locale: {
+            applyLabel: 'Submit',
+            cancelLabel: 'Clear',
+            fromLabel: 'From',
+            toLabel: 'To',
+            customRangeLabel: 'Custom',
+            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            firstDay: 1
+          }
+        };
+        $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+        $('#reportrange').daterangepicker(optionSet1, cb);
+        $('#reportrange').on('show.daterangepicker', function() {
+          console.log("show event fired");
+        });
+        $('#reportrange').on('hide.daterangepicker', function() {
+          console.log("hide event fired");
+        });
+        $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+          console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+        });
+        $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
+          console.log("cancel event fired");
+        });
+        $('#options1').click(function() {
+          $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+        });
+        $('#options2').click(function() {
+          $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+        });
+        $('#destroy').click(function() {
+          $('#reportrange').data('daterangepicker').remove();
+        });
+      });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+
+    <!-- gauge.js -->
+    <script>
+      var opts = {
+          lines: 12,
+          angle: 0,
+          lineWidth: 0.4,
+          pointer: {
+              length: 0.75,
+              strokeWidth: 0.042,
+              color: '#1D212A'
+          },
+          limitMax: 'false',
+          colorStart: '#1ABC9C',
+          colorStop: '#1ABC9C',
+          strokeColor: '#F0F3F3',
+          generateGradient: true
+      };
+      var target = document.getElementById('foo'),
+          gauge = new Gauge(target).setOptions(opts);
+
+      gauge.maxValue = 6000;
+      gauge.animationSpeed = 32;
+      gauge.set(3200);
+      gauge.setTextField(document.getElementById("gauge-text"));
+    </script>
+    <!-- /gauge.js -->
+  </body>
+</html>

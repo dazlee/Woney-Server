@@ -1,0 +1,100 @@
+.clearfix {
+    clear: both;
+    overflow: auto;
+}
+
+.fg-red {
+    color: #db2828!important;
+}
+.fg-green {
+    color: #21ba45!important;
+}
+
+.bg-blue {
+    background-color: #2185d0!important;
+    color: white !important;
+}
+.bg-gray {
+    background-color: #66757f!important;
+    color: white !important;
+}
+.bg-bluegray {
+    background-color: #7bb0a6!important;
+    color: white !important;
+}
+.bg-yellow {
+    background-color: #ffc71a!important;
+    color: white !important;
+}
+.bg-lipstick {
+    background-color: #e32e5b!important;
+    color: white !important;
+}
+.bg-white {
+    background-color: white !important;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+
+.p-0 {
+    padding: 0px !important;
+}
+.p-10 {
+    padding: 10px !important;
+}
+.p-5 {
+    padding: 5px !important;
+}
+.md-10 {
+    margin-bottom: 10px !important;
+}
+.mr-20 {
+    margin-right: 20px !important;
+}
+.m-36 {
+    margin: 36px !important;
+}
+
+
+.w-100 {
+    width: 100% !important;
+}
+
+
+.ui .input.titled {
+    display: flex;
+    flex-flow: column;
+}
+.ui .input.titled .title {
+    font-size: 1em;
+    margin-bottom: 0.2em;
+    margin-top: 0.6em;
+    margin-left: 0.1em;
+    font-weight: 600;
+}
+
+
+.dark-green {
+    background-color: #29bb9c !important;
+    color: white !important;
+}
+.dark-green:hover {
+    background-color: #18aa8b !important;
+}
+
+
+.red {
+    color: #ff3b30 !important;
+}
+.green {
+    color: green !important;
+}
+.light-green {
+    color: #39ca74 !important;
+}
+.yellow {
+    color: #fd9727 !important;
+}
