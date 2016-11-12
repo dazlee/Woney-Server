@@ -35,6 +35,7 @@ app.get('/', require("./routes/dashboard"));
 
 // apis
 app.use('/api/signup', require("./routes/api/signup"));
+app.use('/api/user', require("./routes/api/user"));
 
 /**
  * facebook authentications
