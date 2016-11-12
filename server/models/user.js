@@ -1,26 +1,53 @@
 const mongoose = require("mongoose");
-const findOneOrCreate = require('mongoose-find-one-or-create');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    facebookId: String,
+    facebookId: {
+        type: String,
+        required: true,
+    },
     profileUrl: String,
     provider: String,
-    password: String,
+    // password: String,
     name: {
-        lastName: String,
-        firstName: String,
-        middleName: String,
+        lastName: {
+            type: String,
+            required: true,
+        },
+        firstName: {
+            type: String,
+            required: true,
+        },
+        middleName: {
+            type: String,
+        },
     },
-    email: String,
-    gender: String,
-    photo: String,
-    woney: Number,
-    bets: Number,
+    email: {
+        type: String,
+        required: true,
+        index: true,
+        unique: true,
+    },
+    gender: {
+        type: String,
+        required: true,
+        enum: ["male", "female", "unknown"],
+    },
+    photo: {
+        type: String,
+        required: true,
+    },
+    woney: {
+        type: Number,
+        default: 0,
+    },
+    bets: {
+        type: Number,
+        default: 0,
+    },
     //accessToken: String,
     //tokenExpires: Date,
 });
-UserSchema.plugin(findOneOrCreate);
 UserSchema.methods.validPassword = function (password) {
     return this.password === password;
 };

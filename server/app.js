@@ -33,6 +33,9 @@ require("./db/mongodb").connect();
 
 app.get('/', require("./routes/dashboard"));
 
+// apis
+app.use('/api/signup', require("./routes/api/signup"));
+
 /**
  * facebook authentications
  */

@@ -49,10 +49,20 @@ passport.deserializeUser(function(_id, done) {
 
 function signup (attributes) {
     return new Promise((resolve, reject) => {
-        UserModel.create({
-            username: attributes.username,
-            password: attributes.password,
-        }, (error, user) => {
+        const userModel = {
+            facebookId: attributes.facebookId,
+            name: {
+                firstName:  attributes.firstName,
+                lastName: attributes.lastName,
+                middleName: attributes.middleName,
+            },
+            email:      attributes.email,
+            gender:     attributes.gender,
+            photo:      attributes.photo,
+            woney:      attributes.woney,
+            bets:       attributes.bets,
+        };
+        UserModel.create(userModel, (error, user) => {
             if (error) {
                 reject(error);
                 return;
