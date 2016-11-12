@@ -1,35 +1,10 @@
 const UserModel = require("../models/user");
 const passport = require("passport"),
-      LocalStrategy = require("passport-local").Strategy,
       FacebookStrategy = require("passport-facebook").Strategy;
 const FACEBOOK_APP_ID = "1741830396105332";
 const FACEBOOK_APP_SECRET = "d36ad066d40922137be1f6933adcaa2e";
 const config = require("../config");
 const logger = require("../lib/logger");
-const UserFields = "username role displayName photos";
-// login passport setup
-passport.use(new LocalStrategy(
-    function(username, password, done) {
-        UserModel.findOne({ username: username }, function (err, user) {
-            if (err) {
-                return done(err);
-            }
-            if (!user) {
-                return done(null, false, { message: 'Incorrect username.' });
-            }
-            if (!user.validPassword(password)) {
-                return done(null, false, { message: 'Incorrect password.' });
-            }
-            const returnUser = {
-                _id: user._id,
-                username: user.username,
-                role: user.role,
-                photos: user.photos,
-            };
-            return done(null, returnUser);
-        });
-    }
-));
 
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
@@ -48,7 +23,7 @@ passport.use(new FacebookStrategy({
             middleName: profile.middleName,
         },
         email: profile.emails.length > 0 ? profile.emails[0].value : "",
-        photos: profile.photos.length > 0 ? profile.photos[0].value: "",
+        photo: profile.photos.length > 0 ? profile.photos[0].value: "",
         profileUrl: profile.profileUrl,
     };
     UserModel.findOneAndUpdate({
@@ -66,9 +41,7 @@ passport.deserializeUser(function(_id, done) {
     UserModel.findOne({_id: _id}, function(err, user) {
         const returnUser = {
             _id: user._id,
-            username: user.username,
-            role: user.role,
-            photos: user.photos
+            photo: user.photo
         };
         done(null, user);
     });
@@ -104,7 +77,7 @@ function checkUserExist (attributes) {
 }
 function getUser (attributes) {
     return new Promise((resolve, reject) => {
-        UserModel.findOne(attributes, UserFields, (error, user) => {
+        UserModel.findOne(attributes, (error, user) => {
             if (error) {
                 reject(error);
                 return;

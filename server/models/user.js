@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     facebookId: String,
     profileUrl: String,
+    provider: String,
     password: String,
     name: {
         lastName: String,
@@ -16,6 +17,8 @@ const UserSchema = new Schema({
     photo: String,
     woney: Number,
     bets: Number,
+    //accessToken: String,
+    //tokenExpires: Date,
 });
 UserSchema.plugin(findOneOrCreate);
 UserSchema.methods.validPassword = function (password) {
