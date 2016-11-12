@@ -16,4 +16,18 @@ router.get("/me", (req, res) => {
     });
 });
 
+router.post("/me/gain", (req, res) => {
+    const woney = req.body.woney;
+    UserStore.updateUser("58271c0c85ff2f09d86408ce", {
+        woney
+    })
+    .then((user) => {
+        res.json(user);
+    })
+    .catch((error) => {
+        res.status(400).send(error);
+        res.end();
+    });
+});
+
 module.exports = router;

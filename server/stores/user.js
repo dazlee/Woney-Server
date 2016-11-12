@@ -104,8 +104,23 @@ function getUser (attributes) {
     });
 }
 
+function updateUser (userId, attributes) {
+    return new Promise((resolve, reject) => {
+        UserModel.findByIdAndUpdate(userId, {
+            $set: attributes,
+        }, { new: true }, (error, user) => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(user);
+        });
+    });
+}
+
 module.exports = {
     signup,
     checkUserExist,
     getUser,
+    updateUser,
 };
