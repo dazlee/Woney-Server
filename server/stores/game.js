@@ -16,6 +16,21 @@ function getOnGoingGame() {
         });
     });
 }
+function getLastDrawGame() {
+    return new Promise((resolve, reject) => {
+        GameModel.findOne({
+            finished: true,
+        }).sort({
+            series: -1
+        }).exec((error, game) => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(game);
+        });
+    });
+}
 function createGame(attributes) {
     return new Promise((resolve, reject) => {
         // need to protect the timezone format, otherwise that will be incorrect
@@ -36,8 +51,28 @@ function createGame(attributes) {
         });
     });
 }
+function finishGame(gameId, attributes) {
+    return new Promise((resolve, reject) => {
+        const finishedGame = {
+            finished: true,
+            firstWinner: attributes.firstWinner,
+            commonWinners: attributes.commonWinners,
+        };
+        GameModel.findByIdAndUpdate(gameId, {
+            $set: finishedGame
+        }, {new: true}, (error, game) => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(game);
+        });
+    });
+}
 
 module.exports = {
     getOnGoingGame,
     createGame,
+    finishGame,
+    getLastDrawGame,
 };

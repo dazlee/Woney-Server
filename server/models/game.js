@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const UserSchema = new Schema({
+    firstName: String,
+    lastName: String,
+    email: String,
+}, {_id : false});
 const GameSchema = new Schema({
     series: {
         type: Number,
@@ -24,16 +29,8 @@ const GameSchema = new Schema({
         type: Boolean,
         default: false,
     },
-    firstWinner: {
-        firstName: String,
-        lastName: String,
-        email: String,
-    },
-    commonWinners: [{
-        firstName: String,
-        lastName: String,
-        email: String,
-    }],
+    firstWinner: UserSchema,
+    commonWinners: [UserSchema],
 }, {
     timestamps: true,
 });
