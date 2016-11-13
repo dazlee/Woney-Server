@@ -11,6 +11,7 @@ function _connect () {
 
         logger.info("connected to mongoDB", config.mongoURL);
     });
+    mongoose.Promise = require('bluebird');
 }
 
 module.exports = {

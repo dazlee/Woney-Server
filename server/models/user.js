@@ -47,6 +47,8 @@ const UserSchema = new Schema({
     },
     //accessToken: String,
     //tokenExpires: Date,
+}, {
+    timestamps: true,
 });
 UserSchema.methods.validPassword = function (password) {
     return this.password === password;
