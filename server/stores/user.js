@@ -69,7 +69,7 @@ function signup (attributes) {
                 facebookId: attributes.facebookId,
                 name: {
                     firstName:  attributes.firstName,
-                    lastName: attributes.lastName,
+                    lastName:   attributes.lastName,
                     middleName: attributes.middleName,
                 },
                 email:      attributes.email,

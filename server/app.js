@@ -43,6 +43,7 @@ app.use('/api/games', require("./routes/api/game"));
 // with user token authentications
 app.use(require("./middlewares/checkLogin"));
 app.use('/api/signup', require("./routes/api/signup"));
+app.use(require("./middlewares/authorization"));
 app.use('/api/user', require("./routes/api/user"));
 
 

@@ -3,9 +3,8 @@ const router = express.Router();
 const UserStore = require("../../stores/user");
 
 router.get("/me", (req, res) => {
-    // [TODO] should use token to remember user
     UserStore.getUser({
-        email: "asdf@asdf.asf",
+        _id: req.userId,
     })
     .then((user) => {
         res.json(user);
@@ -17,7 +16,7 @@ router.get("/me", (req, res) => {
 });
 router.post("/me/gain", (req, res) => {
     const woney = req.body.woney;
-    UserStore.updateUser("58271c0c85ff2f09d86408ce", {
+    UserStore.updateUser(req.userId, {
         woney
     })
     .then((user) => {
@@ -31,7 +30,7 @@ router.post("/me/gain", (req, res) => {
 router.post("/me/bet", (req, res) => {
     const woney = req.body.woney,
           bets = req.body.bets;
-    UserStore.updateUser("58271c0c85ff2f09d86408ce", {
+    UserStore.updateUser(req.userId, {
         woney, bets
     })
     .then((user) => {
