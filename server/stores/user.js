@@ -5,6 +5,7 @@ const FACEBOOK_APP_ID = "1741830396105332";
 const FACEBOOK_APP_SECRET = "d36ad066d40922137be1f6933adcaa2e";
 const config = require("../config");
 const logger = require("../lib/logger");
+const jwt = require("jsonwebtoken");
 
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
@@ -47,27 +48,43 @@ passport.deserializeUser(function(_id, done) {
     });
 });
 
+function signUser(user) {
+    const token = jwt.sign({userId: user._id.toString()}, config.secret, {
+        expiresIn: "2 days" // expires in 24 hours
+    });
+    const newUser = user.toObject();
+    newUser.accessToken = token;
+    return newUser;
+}
 function signup (attributes) {
     return new Promise((resolve, reject) => {
-        const userModel = {
-            facebookId: attributes.facebookId,
-            name: {
-                firstName:  attributes.firstName,
-                lastName: attributes.lastName,
-                middleName: attributes.middleName,
-            },
-            email:      attributes.email,
-            gender:     attributes.gender,
-            photo:      attributes.photo,
-            woney:      attributes.woney,
-            bets:       attributes.bets,
-        };
-        UserModel.create(userModel, (error, user) => {
-            if (error) {
-                reject(error);
-                return;
-            }
-            resolve(user);
+        getUser({
+            email: attributes.email,
+        })
+        .then(function (user) {
+            resolve(signUser(user));
+        })
+        .catch(function (error) {
+            const userModel = {
+                facebookId: attributes.facebookId,
+                name: {
+                    firstName:  attributes.firstName,
+                    lastName: attributes.lastName,
+                    middleName: attributes.middleName,
+                },
+                email:      attributes.email,
+                gender:     attributes.gender,
+                photo:      attributes.photo,
+                woney:      attributes.woney,
+                bets:       attributes.bets,
+            };
+            UserModel.create(userModel, (error, user) => {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(signUser(user));
+            });
         });
     });
 }

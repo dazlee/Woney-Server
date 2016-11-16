@@ -9,6 +9,7 @@ const cons = require('consolidate');
 const session = require('express-session');
 const flash = require("connect-flash");
 const serverLogger = require("./lib/logger");
+const config = require("./config");
 
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'dust');
@@ -21,12 +22,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(flash());
 app.use(session({
-    secret: "secret",
+    secret: config.secret,
     resave: true,
     saveUninitialized: true,
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.set("jwtSecret", config.secret);
 
 // connect to mongoDB
 require("./db/mongodb").connect();
@@ -35,9 +37,14 @@ require("./db/mongodb").connect();
 app.get('/', require("./routes/dashboard"));
 
 // apis
+// without user token authentications
+app.use('/api/games', require("./routes/api/game"));
+
+// with user token authentications
+app.use(require("./middlewares/checkLogin"));
 app.use('/api/signup', require("./routes/api/signup"));
 app.use('/api/user', require("./routes/api/user"));
-app.use('/api/games', require("./routes/api/game"));
+
 
 /**
  * facebook authentications

@@ -4,7 +4,15 @@ const router = express.Router();
 const UserStore = require("../../stores/user");
 
 router.post("/", (req, res) => {
-    UserStore.signup(req.body)
+    var userPromise;
+    if (req.userId) {
+        userPromise = UserStore.getUser({
+            _id: req.userId
+        });
+    } else {
+        userPromise = UserStore.signup(req.body);
+    }
+    userPromise
     .then((user) => {
         res.json(user);
     })

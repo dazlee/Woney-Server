@@ -11,5 +11,6 @@ const config = {
 
     logFilePath: "./woney.log",
     siteUrl: "http://ec2-54-238-195-108.ap-northeast-1.compute.amazonaws.com:3000",
+    secret: "lasdfaisdgfaskldfhlkahsfdkhlajhsdlfhasd",
 };
 module.exports = config;

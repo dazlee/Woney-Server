@@ -45,13 +45,17 @@ const UserSchema = new Schema({
         type: Number,
         default: 0,
     },
-    //accessToken: String,
-    //tokenExpires: Date,
 }, {
     timestamps: true,
 });
 UserSchema.methods.validPassword = function (password) {
     return this.password === password;
+};
+
+if (!UserSchema.options.toObject) UserSchema.options.toObject = {};
+UserSchema.options.toObject.transform = function (doc, ret, options) {
+    delete ret.__v;
+    return ret;
 };
 
 module.exports = mongoose.model("User", UserSchema);
