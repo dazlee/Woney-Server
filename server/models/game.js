@@ -2,9 +2,22 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
+    firstName: {
+        type: String,
+        required: true,
+    },
+    lastName: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    photo: {
+        type: String,
+        required: true,
+    }
 }, {_id : false});
 const GameSchema = new Schema({
     series: {

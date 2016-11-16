@@ -40,9 +40,10 @@ app.get('/', require("./routes/dashboard"));
 // without user token authentications
 app.use('/api/games', require("./routes/api/game"));
 
-// with user token authentications
+// with user check login
 app.use(require("./middlewares/checkLogin"));
 app.use('/api/signup', require("./routes/api/signup"));
+// with user authorization
 app.use(require("./middlewares/authorization"));
 app.use('/api/user', require("./routes/api/user"));
 

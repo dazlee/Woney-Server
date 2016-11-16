@@ -34,6 +34,7 @@ function getLastDrawGame() {
 function createGame(attributes) {
     return new Promise((resolve, reject) => {
         // need to protect the timezone format, otherwise that will be incorrect
+        // tz 格式 yyyy-mm-dd hh:mm
         const startTimeEST = MomentTimezone.tz(attributes.startTime, "America/New_York");
         const endTimeEST = MomentTimezone.tz(attributes.endTime, "America/New_York");
         const newGame = {
