@@ -3,7 +3,9 @@ const router = express.Router();
 const logger = require("../lib/logger");
 
 router.get("/", (req, res) => {
-    res.render("dashboard");
+    res.render("dashboard", {
+        title: "參與列表"
+    });
 });
 
 module.exports = router;

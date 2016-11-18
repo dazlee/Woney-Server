@@ -292,6 +292,9 @@ a.bg-danger:hover {
 .panel {
 	border: 0;
 }
+.panel:first-child {
+	margin-top: 10px;
+}
 
 .panel-heading {
 	font-size: 18px;
@@ -823,6 +826,9 @@ h1.page-header {
 /*Tables*/
 .table {
 	background: #fff;
+}
+.table.fixed-layout {
+	table-layout: fixed;
 }
 
 .fixed-table-container {
