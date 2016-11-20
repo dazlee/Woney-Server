@@ -16,9 +16,13 @@ router.get("/me", (req, res) => {
     });
 });
 router.post("/me/gain", (req, res) => {
-    const woney = req.body.woney;
+    const woney = req.body.woney,
+          addedWoneys = req.body.addedWoneys;
     UserStore.updateUser(req.userId, {
         woney
+    }, {
+        // inc attributes
+        totalWoney: addedWoneys
     })
     .then((user) => {
         res.json(user);
