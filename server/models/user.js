@@ -41,7 +41,11 @@ const UserSchema = new Schema({
         type: Number,
         default: 0,
     },
-    bets: {
+    totalWoney: {
+        type: Number,
+        default: 0,
+    },
+    wonTimes: {
         type: Number,
         default: 0,
     },

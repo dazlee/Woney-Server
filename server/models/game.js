@@ -26,10 +26,6 @@ const GameSchema = new Schema({
         index: true,
         unique: true,
     },
-    woney: {
-        type: Number,
-        required: true,
-    },
     startTime: {
         type: Date,
         required: true,
@@ -41,6 +37,10 @@ const GameSchema = new Schema({
     finished: {
         type: Boolean,
         default: false,
+    },
+    reward: {
+        type: Number,
+        default: 0,
     },
     firstWinner: UserSchema,
     commonWinners: [UserSchema],

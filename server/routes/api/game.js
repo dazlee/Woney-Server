@@ -23,6 +23,17 @@ router.get("/lastDraw", (req, res) => {
     });
 });
 
+router.get("/", (req, res) => {
+    const newGame = req.body;
+    GameStore.getGames()
+    .then((games) => {
+        res.json(games);
+    })
+    .catch((error) => {
+        res.status(400).send(error);
+        res.end();
+    });
+});
 router.post("/", (req, res) => {
     const newGame = req.body;
     GameStore.createGame(newGame)

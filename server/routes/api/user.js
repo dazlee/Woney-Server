@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const UserStore = require("../../stores/user");
+const BetsStore = require("../../stores/bets");
 
 router.get("/me", (req, res) => {
     UserStore.getUser({
@@ -29,12 +30,22 @@ router.post("/me/gain", (req, res) => {
 });
 router.post("/me/bet", (req, res) => {
     const woney = req.body.woney,
-          bets = req.body.bets;
-    UserStore.updateUser(req.userId, {
-        woney, bets
+          bets = req.body.bets,
+          gameId = req.body.gameId,
+          userId = req.userId;
+
+    UserStore.updateUser(userId, {
+        woney,
     })
     .then((user) => {
-        res.json(user);
+        return BetsStore.placeBets({
+            userId, gameId, bets,
+        });
+    })
+    .then((data) => {
+        res.json({
+            bets, woney
+        });
     })
     .catch((error) => {
         res.status(400).send(error);

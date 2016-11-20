@@ -12,6 +12,13 @@ function getOnGoingGame() {
                 reject(error);
                 return;
             }
+            if (!game) {
+                reject({
+                    error: "no_ongoing_game",
+                    message: "cannot find ongoing game"
+                });
+                return;
+            }
             resolve(game);
         });
     });
@@ -25,6 +32,13 @@ function getLastDrawGame() {
         }).exec((error, game) => {
             if (error) {
                 reject(error);
+                return;
+            }
+            if (!game) {
+                reject({
+                    error: "no_last_game",
+                    message: "cannot find last game"
+                });
                 return;
             }
             resolve(game);
@@ -70,10 +84,22 @@ function finishGame(gameId, attributes) {
         });
     });
 }
+function getGames () {
+    return new Promise((resolve, reject) => {
+        GameModel.find({}, function (error, games) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(games);
+        });
+    });
+}
 
 module.exports = {
     getOnGoingGame,
     createGame,
     finishGame,
     getLastDrawGame,
+    getGames,
 };
