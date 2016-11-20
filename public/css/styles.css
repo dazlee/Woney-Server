@@ -941,3 +941,13 @@ h1.page-header {
 .menu i {
 	padding-right: 4px;
 }
+
+
+.action-toolbar {
+    display: inline;
+    float: right;
+}
+.action-toolbar select {
+	display: inline;
+	width: inherit;
+}
