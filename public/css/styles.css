@@ -951,3 +951,8 @@ h1.page-header {
 	display: inline;
 	width: inherit;
 }
+
+
+.text-red {
+	color: #FF0000;
+}

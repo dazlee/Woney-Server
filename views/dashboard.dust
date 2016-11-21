@@ -3,7 +3,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <form role="form" method="post">
-            <div class="form-group col-md-{{width}}">
+            <div class="form-group col-md-12">
                 <label>{title}</label>
                 <div class="btn-toolbar action-toolbar" role="toolbar">
                     <div class="btn-group" role="group">
