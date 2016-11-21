@@ -3,9 +3,8 @@ const router = express.Router();
 const logger = require("../lib/logger");
 
 router.get("/", (req, res) => {
-    res.render("reward", {
-        title: "累積獎金金額(每日早上手動更新)",
-        reward: 2000
+    res.render("winners", {
+        title: "Winners",
     });
 });
 

@@ -36,6 +36,7 @@ require("./db/mongodb").connect();
 
 app.get('/', require("./routes/dashboard"));
 app.use('/reward', require("./routes/reward"));
+app.use('/winners', require("./routes/winners"));
 
 // apis
 // without user token authentications

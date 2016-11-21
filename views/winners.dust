@@ -1,0 +1,54 @@
+{>"layouts/main"/}
+{<body}
+<div class="panel panel-default">
+    <div class="panel-body">
+            <div class="form-group col-md-6">
+                <label>{title}</label>
+                <div class="btn-toolbar action-toolbar" role="toolbar">
+                    <div class="btn-group" role="group">
+                        <select class="form-control">
+                            <option>第4期 2017/2/3</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+                </div>
+                <table class="table fixed-layout">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>FB Name</th>
+                            <th>FB Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                body1
+                            </td>
+                            <td>
+                                body2
+                            </td>
+                            <td>
+                                body3
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                body1
+                            </td>
+                            <td>
+                                body2
+                            </td>
+                            <td>
+                                body3
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+
+{/body}
