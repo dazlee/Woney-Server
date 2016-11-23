@@ -8,10 +8,9 @@
                 <div class="btn-toolbar action-toolbar" role="toolbar">
                     <div class="btn-group" role="group">
                         <select class="form-control">
-                            <option>第4期 2017/2/3</option>
-                            <option>3</option>
-                            <option>2</option>
-                            <option>1</option>
+                        {#games}
+                            <option>第{series}期 - {@formatDate date="{endTime}"/}</option>
+                        {/games}
                         </select>
                     </div>
                     <div class="btn-group" role="group">

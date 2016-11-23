@@ -86,7 +86,11 @@ function finishGame(gameId, attributes) {
 }
 function getGames () {
     return new Promise((resolve, reject) => {
-        GameModel.find({}, function (error, games) {
+        GameModel.find({})
+        .sort({
+            series: -1
+        })
+        .exec(function (error, games) {
             if (error) {
                 reject(error);
                 return;

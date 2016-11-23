@@ -1,15 +1,19 @@
 const moment = require('moment');
-export function relativeDateTime (date) {
+ function relativeDateTime (date) {
     const _date = new Date(date);
     return moment(_date).calendar();
 }
 
-export function simpleFormattedDate (date) {
+function simpleFormattedDate (date) {
     const _date = new Date(date);
     return moment(_date).format("M/D");
 }
 
-export function formatDate (format, date) {
+function formatDate (format, date) {
     const _date = new Date(date);
     return moment(_date).format(format);
 }
+
+module.exports = {
+    relativeDateTime, simpleFormattedDate, formatDate
+};
