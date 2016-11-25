@@ -1,3 +1,5 @@
+const logger = require("../lib/logger");
+const UserModel = require("../models/user");
 const GameModel = require("../models/game");
 const MomentTimezone = require("moment-timezone");
 
@@ -96,7 +98,27 @@ function finishGame(gameId, attributes) {
                 reject(error);
                 return;
             }
-            resolve(game);
+            var userIds = finishedGame.commonWinners.reduce(function(reduced, winner) {
+                reduced.push(winner._id);
+                return reduced;
+            }, [finishedGame.firstWinner._id]);
+
+            UserModel.update({
+                _id: {
+                    $in: userIds
+                }
+            },{
+                $inc: {
+                    wonTimes: 1
+                }
+            }, {
+                multi: true,
+            }, function (error, users) {
+                if (error) {
+                    logger.error("error when updating user wonTimes ", logger);
+                }
+                resolve(game);
+            });
         });
     });
 }
