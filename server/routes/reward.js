@@ -2,11 +2,40 @@ const express = require("express");
 const router = express.Router();
 const logger = require("../lib/logger");
 
+const GameStore = require("../stores/game");
+
 router.get("/", (req, res) => {
-    res.render("reward", {
-        title: "累積獎金金額(每日早上手動更新)",
-        reward: 2000
+    GameStore.getOnGoingGame()
+    .then(function (game) {
+        res.render("reward", {
+            title: "第 " + game.series + " 期累積獎金金額(每日早上手動更新)",
+            game,
+        });
+    })
+    .catch(function (error) {
+        res.render("reward", {
+            title: "累積獎金金額(每日早上手動更新)",
+            reward: "N/A"
+        });
     });
+});
+router.post("/", (req, res) => {
+    const gameId = req.body.gameId,
+          reward = req.body.reward;
+    GameStore.updateGameReward(gameId, {
+        reward
+    })
+    .then(function (game) {
+        res.redirect("/reward");
+    })
+    .catch(function (error) {
+        res.status(404).send({
+            error: "update_reward_fail",
+            message: "cannot update reward."
+        });
+        res.end();
+    });
+
 });
 
 module.exports = router;

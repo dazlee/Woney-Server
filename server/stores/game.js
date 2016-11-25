@@ -66,6 +66,22 @@ function createGame(attributes) {
         });
     });
 }
+function updateGameReward(gameId, attributes) {
+    return new Promise((resolve, reject) => {
+        const reward = {
+            reward: attributes.reward,
+        };
+        GameModel.findByIdAndUpdate(gameId, {
+            $set: reward
+        }, {new: true}, (error, game) => {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(game);
+        });
+    });
+};
 function finishGame(gameId, attributes) {
     return new Promise((resolve, reject) => {
         const finishedGame = {
@@ -121,4 +137,5 @@ module.exports = {
     finishGame,
     getLastDrawGame,
     getGames,
+    updateGameReward,
 };

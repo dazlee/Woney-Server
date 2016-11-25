@@ -1,5 +1,6 @@
 const momentUtils = require("../../shared/lib/moment-utils");
 const dust = require("dustjs-helpers");
+const numeral = require("numeral");
 
 function registerHelpers() {
     dust.helpers.formatDate = function (chunk, context, bodies, params) {
@@ -12,6 +13,11 @@ function registerHelpers() {
             lastName = dust.helpers.tap(params.lastName, chunk, context);
 
         return chunk.write(firstName + " " + lastName);
+    };
+    dust.helpers.formatNumber = function (chunk, context, bodies, params) {
+        var number = dust.helpers.tap(params.number, chunk, context);
+        number = parseFloat(number);
+        return chunk.write(numeral(number).format('0,0.00'));
     };
 }
 

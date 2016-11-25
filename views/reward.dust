@@ -7,10 +7,11 @@
                 <h3>{title}</h3>
             </div>
             <div class="form-group col-md-6">
-                <h4>目前顯示：<strong class="text-red">{reward}</strong></h4>
-                <input type="number" class="form-control" name="reward"/>
+                <h4>目前顯示：<strong class="text-red">{@formatNumber number=game.reward/}</strong></h4>
+                <input type="number" class="form-control" name="reward" value="0"/>
             </div>
             <div class="form-group col-md-12">
+                <input type="text" name="gameId" value="{game._id}" class="hidden"/>
                 <input type="submit" class="btn btn-primary" value="更新"/>
             </div>
 
