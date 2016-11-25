@@ -6,11 +6,10 @@
                 <label>{title}</label>
                 <div class="btn-toolbar action-toolbar" role="toolbar">
                     <div class="btn-group" role="group">
-                        <select class="form-control">
-                            <option>第4期 2017/2/3</option>
-                            <option>3</option>
-                            <option>2</option>
-                            <option>1</option>
+                        <select id="series-selector" class="form-control">
+                        {#games}
+                            <option value="{series}" {@eq key=series value=currentSeries}  selected="true"{/eq}>第{series}期 - {@formatDate date="{endTime}"/}</option>
+                        {/games}
                         </select>
                     </div>
                 </div>
@@ -23,28 +22,32 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {#game.firstWinner}
                         <tr>
                             <td>
-                                body1
+                                Big winnner
                             </td>
                             <td>
-                                body2
+                                {@fullName firstName="{firstName}" lastName="{lastName}"/}
                             </td>
                             <td>
-                                body3
+                                {facebookId}
                             </td>
                         </tr>
+                        {/game.firstWinner}
+                        {#game.commonWinners}
                         <tr>
                             <td>
-                                body1
+                                Second winnner
                             </td>
                             <td>
-                                body2
+                                {@fullName firstName="{firstName}" lastName="{lastName}"/}
                             </td>
                             <td>
-                                body3
+                                {facebookId}
                             </td>
                         </tr>
+                        {/game.commonWinners}
                     </tbody>
                 </table>
             </div>
