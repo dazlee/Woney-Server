@@ -826,6 +826,7 @@ h1.page-header {
 /*Tables*/
 .table {
 	background: #fff;
+	margin-top: 16px;
 }
 .table.fixed-layout {
 	table-layout: fixed;
@@ -855,6 +856,7 @@ h1.page-header {
 	border-bottom: 1px solid #e6e7e8;
 	vertical-align: middle;
 	height: 50px;
+	padding: 2px 5px;
 }
 
 .fixed-table-pagination .pagination {

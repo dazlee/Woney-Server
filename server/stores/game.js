@@ -99,6 +99,21 @@ function getGames () {
         });
     });
 }
+function getGameBySeries (attributes) {
+    const series = attributes.series;
+    return new Promise((resolve, reject) => {
+        GameModel.findOne({
+            series: series
+        })
+        .exec(function (error, games) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(games);
+        });
+    });
+}
 
 module.exports = {
     getOnGoingGame,

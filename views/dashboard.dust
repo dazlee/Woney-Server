@@ -7,9 +7,9 @@
                 <label>{title}</label>
                 <div class="btn-toolbar action-toolbar" role="toolbar">
                     <div class="btn-group" role="group">
-                        <select class="form-control">
+                        <select id="series-selector" class="form-control">
                         {#games}
-                            <option>第{series}期 - {@formatDate date="{endTime}"/}</option>
+                            <option value="{series}" {@eq key=series value=currentSeries}  selected="true"{/eq}>第{series}期 - {@formatDate date="{endTime}"/}</option>
                         {/games}
                         </select>
                     </div>
@@ -25,7 +25,7 @@
                     <button type="button" class="btn btn-default">確定</button>
                     <button type="button" class="btn btn-default">匯出excel</button>
                 </div>
-                <table class="table fixed-layout">
+                <table class="table fixed-layout tablesorter">
                     <thead>
                         <tr>
                             <th>Bigger Winner</th>
@@ -39,59 +39,34 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {#users}
                         <tr>
                             <td>
-                                body1
+                                is big winner
                             </td>
                             <td>
-                                body2
+                                is second winner
                             </td>
                             <td>
-                                body3
+                                {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
                             </td>
                             <td>
-                                body4
+                                {facebookId}
                             </td>
                             <td>
-                                body2
+                                {bets}
                             </td>
                             <td>
-                                body3
+                                {totalWoney}
                             </td>
                             <td>
-                                body4
+                                {woney}
                             </td>
                             <td>
-                                body4
+                                {wonTimes}
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                body1
-                            </td>
-                            <td>
-                                body2
-                            </td>
-                            <td>
-                                body3
-                            </td>
-                            <td>
-                                body4
-                            </td>
-                            <td>
-                                body2
-                            </td>
-                            <td>
-                                body3
-                            </td>
-                            <td>
-                                body4
-                            </td>
-                            <td>
-                                body4
-                            </td>
-                        </tr>
-
+                        {/users}
                     </tbody>
                 </table>
             </div>

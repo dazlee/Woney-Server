@@ -42,7 +42,29 @@ function getBets(attributes) {
     });
 }
 
+function getBetUsersFromGame(attributes) {
+    const gameId = attributes.gameId;
+    return new Promise(function (resolve, reject) {
+        BetsModel.find({
+            gameId
+        })
+        .lean(true)
+        .exec(function (error, betsDoc) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            const users = betsDoc.map(function(bets) {
+                bets.user.bets = bets.bets;
+                return bets.user;
+            });
+            resolve(users);
+        });
+    });
+}
+
 module.exports = {
     placeBets,
     getBets,
+    getBetUsersFromGame,
 };
