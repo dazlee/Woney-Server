@@ -38,17 +38,17 @@
 
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
-            <li class="active">
+            <li {@eq key=route value="dashboard"}class="active"{/eq}>
                 <a href="/">
 					<span><i class="fa fa-money" aria-hidden="true"></i></svg>抽獎</span>
 				</a>
             </li>
-			<li>
+			<li {@eq key=route value="reward"}class="active"{/eq}>
 				<a href="/reward">
 					<span><i class="fa fa-money" aria-hidden="true"></i>獎金更新</span>
 				</a>
 			</li>
-			<li>
+			<li {@eq key=route value="winners"}class="active"{/eq}>
 				<a href="/winners">
 					<span><i class="fa fa-money" aria-hidden="true"></i>得獎名單</span>
 				</a>

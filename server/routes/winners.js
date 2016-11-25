@@ -25,6 +25,7 @@ router.get("/", (req, res) => {
         }
 
         res.render("winners", {
+            route: "winners",
             title: "Winners",
             games: games,
             game: game,

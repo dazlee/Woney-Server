@@ -8,12 +8,14 @@ router.get("/", (req, res) => {
     GameStore.getOnGoingGame()
     .then(function (game) {
         res.render("reward", {
+            route: "reward",
             title: "第 " + game.series + " 期累積獎金金額(每日早上手動更新)",
             game,
         });
     })
     .catch(function (error) {
         res.render("reward", {
+            route: "reward",
             title: "累積獎金金額(每日早上手動更新)",
             reward: "N/A"
         });

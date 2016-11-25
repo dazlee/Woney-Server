@@ -30,6 +30,7 @@ router.get("/", (req, res) => {
         })
         .then(function (users) {
             res.render("dashboard", {
+                route: "dashboard",
                 title: "參與列表",
                 games: games,
                 users: users,
@@ -39,6 +40,7 @@ router.get("/", (req, res) => {
     })
     .catch(function (error) {
         res.render("error", {
+            route: "dashboard",
             title: "參與列表",
         });
     });
