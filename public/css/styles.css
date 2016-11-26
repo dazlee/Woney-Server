@@ -958,3 +958,8 @@ h1.page-header {
 .text-red {
 	color: #FF0000;
 }
+
+
+.login .panel {
+	margin-top: 60px;
+}

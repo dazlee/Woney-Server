@@ -8,7 +8,7 @@ const UserSchema = new Schema({
     },
     profileUrl: String,
     provider: String,
-    // password: String,
+    password: String,
     name: {
         lastName: {
             type: String,
@@ -53,6 +53,7 @@ const UserSchema = new Schema({
     timestamps: true,
 });
 UserSchema.methods.validPassword = function (password) {
+console.log("usermode", this.password, password);
     return this.password === password;
 };
 

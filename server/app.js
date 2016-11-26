@@ -36,9 +36,14 @@ app.set("jwtSecret", config.secret);
 require("./db/mongodb").connect();
 
 
-app.get('/', require("./routes/dashboard"));
-app.use('/reward', require("./routes/reward"));
-app.use('/winners', require("./routes/winners"));
+app.use("/login", require("./routes/login"));
+app.use("/logout", require("./routes/logout"));
+
+app.use("/admin*", require("./middlewares/checkAdmin"));
+app.use("/", require("./routes/home"));
+app.use('/admin', require("./routes/dashboard"));
+app.use('/admin/reward', require("./routes/reward"));
+app.use('/admin/winners', require("./routes/winners"));
 
 // apis
 // without user token authentications

@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
         reward
     })
     .then(function (game) {
-        res.redirect("/reward");
+        res.redirect("/admin/reward");
     })
     .catch(function (error) {
         res.status(404).send({

@@ -1,10 +1,38 @@
 const jwt = require("jsonwebtoken");
+const passport = require("passport"),
+      LocalStrategy = require("passport-local").Strategy;
 
 const GameStore = require("./game");
 const BetsStore = require("./bets");
 const UserModel = require("../models/user");
 const config = require("../config");
 const logger = require("../lib/logger");
+
+// login passport setup
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+        UserModel.findOne({ username: username }, function (err, user) {
+            if (err) {
+                return done(err);
+            }
+            if (!user) {
+                return done(null, false, { message: 'Incorrect username.' });
+            }
+            if (!user.validPassword(password)) {
+                return done(null, false, { message: 'Incorrect password.' });
+            }
+            return done(null, user.toObject());
+        });
+    }
+));
+passport.serializeUser(function(user, done) {
+    done(null, user._id);
+});
+passport.deserializeUser(function(_id, done) {
+    UserModel.findOne({_id: _id}, function(err, user) {
+        done(null, user.toObject());
+    });
+});
 
 function signUser(user) {
     const token = jwt.sign({userId: user._id.toString()}, config.secret, {

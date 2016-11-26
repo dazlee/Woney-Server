@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Woney</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css"rel="stylesheet">
+  </head>
+  <body>
+  	<div class="login row">
+        <div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">登入</div>
+				<div class="panel-body">
+					<div class="col-md-12">
+						<form role="form" method="POST">
+
+							<div class="form-group">
+								<label>帳號</label>
+								<input name="username" class="form-control">
+							</div>
+
+							<div class="form-group">
+								<label>密碼</label>
+								<input name="password" type="password" class="form-control">
+							</div>
+                            <div class="form-group">
+								<input type="submit" class="btn btn-primary" value="送出"/>
+                            </div>
+						</form>
+                        {#message}
+                        <div class="alert bg-danger" role="alert">
+                            {message}
+        				</div>
+                        {/message}
+                    </div>
+				</div>
+			</div>
+		</div>
+    </div>
+  </body>
+</html>
