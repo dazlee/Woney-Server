@@ -19,6 +19,31 @@ function registerHelpers() {
         number = parseFloat(number);
         return chunk.write(numeral(number).format('0,0.00'));
     };
+    dust.helpers.compare = function (chunk, context, bodies, params) {
+        var value1 = params.value1,
+            value2 = params.value2,
+            body = bodies.block;
+
+        if (value1 == value2) {
+            chunk.render(body, context);
+        }
+        return chunk;
+    };
+    dust.helpers.inUserArray = function (chunk, context, bodies, params) {
+        var users = params.users,
+            userId = params.userId,
+            body = bodies.block;
+
+        var isInUsers = users.some(function (user) {
+            if (user._id == userId) {
+                chunk.render(body, context);
+                return true;
+            }
+            return false;
+        });
+
+        return chunk;
+    };
 }
 
 module.exports = {

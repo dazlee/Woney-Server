@@ -42,10 +42,14 @@
                         {#users}
                         <tr>
                             <td>
-                                is big winner
+                                {@compare value1=_id value2=game.firstWinner._id}
+                                    winner
+                                {/compare}
                             </td>
                             <td>
-                                is second winner
+                                {@inUserArray userId=_id users=game.commonWinners}
+                                    winner
+                                {/inUserArray}
                             </td>
                             <td>
                                 {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
@@ -70,7 +74,7 @@
                     </tbody>
                 </table>
             </div>
-            <input type="submit" class="btn btn-primary" value="送出"/>
+            <input type="submit" class="btn btn-primary" value="抽獎"/>
         </form>
     </div>
 </div>

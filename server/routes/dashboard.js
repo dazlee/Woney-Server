@@ -9,24 +9,24 @@ router.get("/", (req, res) => {
     var series = req.query.series;
     GameStore.getGames()
     .then(function (games) {
-        var gameId;
+        var game;
         if (series) {
             series = parseInt(series);
-            games.some(function (game, index) {
-                if (game.series === series) {
-                    gameId = game._id;
+            games.some(function (_game, index) {
+                if (_game.series === series) {
+                    game = _game;
                     return true;
                 }
                 return false;
             });
         }
-        if (!gameId) {
+        if (!game) {
             series = games[0].series;
-            gameId = games[0]._id;
+            game = games[0];
         }
 
         BetsStore.getBetUsersFromGame({
-            gameId: gameId
+            gameId: game._id
         })
         .then(function (users) {
             res.render("dashboard", {
@@ -35,6 +35,7 @@ router.get("/", (req, res) => {
                 games: games,
                 users: users,
                 currentSeries: series,
+                game: game,
             });
         });
     })
