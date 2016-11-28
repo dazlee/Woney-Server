@@ -13,16 +13,6 @@
                         {/games}
                         </select>
                     </div>
-                    <div class="btn-group" role="group">
-                        <span style="padding-left: 10px;">排序依：</span>
-                        <select class="form-control">
-                            <option>Bet次數</option>
-                            <option>3</option>
-                            <option>2</option>
-                            <option>1</option>
-                        </select>
-                    </div>
-                    <button type="button" class="btn btn-default">確定</button>
                     <button type="button" class="btn btn-default">匯出excel</button>
                 </div>
                 <table class="table fixed-layout tablesorter">
