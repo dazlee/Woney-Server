@@ -4,16 +4,6 @@
     <div class="panel-body">
         <div class="form-group col-md-12">
             <label>{title}</label>
-            <div class="btn-toolbar action-toolbar" role="toolbar">
-                <div class="btn-group" role="group">
-                    <select id="series-selector" class="form-control">
-                    {#games}
-                        <option value="{series}" {@eq key=series value=currentSeries}  selected="true"{/eq}>第{series}期 - {@formatDate date="{endTime}"/}</option>
-                    {/games}
-                    </select>
-                </div>
-                <button type="button" class="btn btn-default">匯出excel</button>
-            </div>
             <table class="table fixed-layout tablesorter">
                 <thead>
                     <tr>
@@ -28,17 +18,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {#users}
+                    {#firstWinner}
                     <tr>
                         <td>
-                            {@compare value1=_id value2=game.firstWinner._id}
-                                winner
-                            {/compare}
+                            winner
                         </td>
                         <td>
-                            {@inUserArray userId=_id users=game.commonWinners}
-                                winner
-                            {/inUserArray}
+
                         </td>
                         <td>
                             {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
@@ -59,12 +45,39 @@
                             {wonTimes}
                         </td>
                     </tr>
-                    {/users}
+                    {/firstWinner}
+                    {#commonWinners}
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            winner
+                        </td>
+                        <td>
+                            {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
+                        </td>
+                        <td>
+                            {facebookId}
+                        </td>
+                        <td>
+                            {bets}
+                        </td>
+                        <td>
+                            {totalWoney}
+                        </td>
+                        <td>
+                            {woney}
+                        </td>
+                        <td>
+                            {wonTimes}
+                        </td>
+                    </tr>
+                    {/commonWinners}
                 </tbody>
             </table>
         </div>
-        <a href="/admin/drawing/{game._id}" class="btn btn-primary">抽獎</a>
+        <a href="/admin/drawing/" class="btn btn-primary">確定</a>
     </div>
 </div>
-
 {/body}

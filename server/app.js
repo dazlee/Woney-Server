@@ -42,6 +42,7 @@ app.use("/logout", require("./routes/logout"));
 app.use("/admin*", require("./middlewares/checkAdmin"));
 app.use("/", require("./routes/home"));
 app.use('/admin', require("./routes/dashboard"));
+app.use('/admin/drawing', require("./routes/drawing"));
 app.use('/admin/reward', require("./routes/reward"));
 app.use('/admin/winners', require("./routes/winners"));
 
