@@ -29,6 +29,15 @@ function registerHelpers() {
         }
         return chunk;
     };
+    dust.helpers.unless = function (chunk, context, bodies, params) {
+        var value = params.value,
+            body = bodies.block;
+
+        if (!value) {
+            chunk.render(body, context);
+        }
+        return chunk;
+    };
     dust.helpers.inUserArray = function (chunk, context, bodies, params) {
         var users = params.users,
             userId = params.userId,

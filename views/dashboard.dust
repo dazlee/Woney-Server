@@ -63,7 +63,7 @@
                     <tr>
                         <td colspan=8>
                             <div class="alert bg-danger" role="alert">
-                                no participant
+                                no bets
             				</div>
                         </td>
                     </tr>
@@ -71,7 +71,9 @@
                 </tbody>
             </table>
         </div>
+        {@unless value=game.finished}
         <a href="/admin/drawing/{game._id}" class="btn btn-primary">抽獎</a>
+        {/unless}
     </div>
 </div>
 
