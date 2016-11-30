@@ -28,7 +28,7 @@
                                 Big winnner
                             </td>
                             <td>
-                                {@fullName firstName="{firstName}" lastName="{lastName}"/}
+                                {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
                             </td>
                             <td>
                                 {facebookId}
@@ -41,7 +41,7 @@
                                 Second winnner
                             </td>
                             <td>
-                                {@fullName firstName="{firstName}" lastName="{lastName}"/}
+                                {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
                             </td>
                             <td>
                                 {facebookId}

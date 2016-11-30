@@ -10,13 +10,15 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
-    firstName: {
-        type: String,
-        required: true,
-    },
-    lastName: {
-        type: String,
-        required: true,
+    name: {
+        firstName: {
+            type: String,
+            required: true,
+        },
+        lastName: {
+            type: String,
+            required: true,
+        },
     },
     email: {
         type: String,
@@ -26,7 +28,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     }
-}, {_id : false});
+});
 const GameSchema = new Schema({
     series: {
         type: Number,
