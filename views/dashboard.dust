@@ -59,6 +59,14 @@
                             {wonTimes}
                         </td>
                     </tr>
+                    {:else}
+                    <tr>
+                        <td colspan=8>
+                            <div class="alert bg-danger" role="alert">
+                                no participant
+            				</div>
+                        </td>
+                    </tr>
                     {/users}
                 </tbody>
             </table>

@@ -14,6 +14,11 @@ function formatDate (format, date) {
     return moment(_date).format(format);
 }
 
+function addDays (date, days) {
+    const _date = new Date(date);
+    return moment(_date).add(days, "days");
+}
+
 module.exports = {
-    relativeDateTime, simpleFormattedDate, formatDate
+    relativeDateTime, simpleFormattedDate, formatDate, addDays
 };

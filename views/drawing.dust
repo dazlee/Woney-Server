@@ -3,7 +3,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <div class="form-group col-md-12">
-            <label>{title}</label>
+            <label>{title} {game._id}</label>
             <table class="table fixed-layout tablesorter">
                 <thead>
                     <tr>
@@ -77,7 +77,29 @@
                 </tbody>
             </table>
         </div>
-        <a href="/admin/drawing/" class="btn btn-primary">確定</a>
+        <a id="draw-confirm" href="/admin/drawing/" class="btn btn-primary">確定</a>
     </div>
 </div>
+<script>
+var firstWinner = {#firstWinner}{@contextDump/}{/firstWinner};
+var commonWinners = [{#commonWinners}{@contextDump/},{/commonWinners}];
+window.onload = function () {
+    $("#draw-confirm").on("click", function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: "/admin/drawing/{gameId}/finish",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                firstWinner: firstWinner,
+                commonWinners: commonWinners,
+            }),
+            success: function () {
+                location.href="/admin";
+            },
+            dataType: "json"
+        });
+    });
+};
+</script>
 {/body}

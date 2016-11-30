@@ -152,6 +152,21 @@ function getGameBySeries (attributes) {
         });
     });
 }
+function getGameById (attributes) {
+    const gameId = attributes.gameId;
+    return new Promise((resolve, reject) => {
+        GameModel.findOne({
+            _id: gameId
+        })
+        .exec(function (error, games) {
+            if (error) {
+                reject(error);
+                return;
+            }
+            resolve(games);
+        });
+    });
+}
 
 module.exports = {
     getOnGoingGame,
@@ -160,4 +175,5 @@ module.exports = {
     getLastDrawGame,
     getGames,
     updateGameReward,
+    getGameById,
 };
