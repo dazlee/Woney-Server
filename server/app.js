@@ -39,7 +39,7 @@ require("./db/mongodb").connect();
 app.use("/login", require("./routes/login"));
 app.use("/logout", require("./routes/logout"));
 
-// app.use("/admin*", require("./middlewares/checkAdmin"));
+app.use("/admin*", require("./middlewares/checkAdmin"));
 app.use("/", require("./routes/home"));
 app.use('/admin', require("./routes/dashboard"));
 app.use('/admin/drawing', require("./routes/drawing"));
