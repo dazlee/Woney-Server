@@ -53,7 +53,6 @@ const UserSchema = new Schema({
     timestamps: true,
 });
 UserSchema.methods.validPassword = function (password) {
-console.log("usermode", this.password, password);
     return this.password === password;
 };
 

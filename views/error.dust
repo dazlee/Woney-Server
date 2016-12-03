@@ -5,6 +5,6 @@
     <title>Woney</title>
   </head>
   <body>
-  	<div id="message">error</div>
+  	<div id="message">{message}</div>
   </body>
 </html>

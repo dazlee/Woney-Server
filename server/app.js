@@ -13,6 +13,7 @@ const flash = require("connect-flash");
 const serverLogger = require("./lib/logger");
 const config = require("./config");
 
+app.set("port", process.env.PORT);
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'dust');
 app.engine('dust', cons.dust);
@@ -32,10 +33,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.set("jwtSecret", config.secret);
 
-// connect to mongoDB
-require("./db/mongodb").connect();
-
-
 app.use("/login", require("./routes/login"));
 app.use("/logout", require("./routes/logout"));
 
@@ -51,20 +48,12 @@ app.use('/admin/winners', require("./routes/winners"));
 app.use('/api/games', require("./routes/api/game"));
 
 // with user check login
-app.use(require("./middlewares/checkLogin"));
+app.use("/api*", require("./middlewares/checkLogin"));
 app.use('/api/signup', require("./routes/api/signup"));
 // with user authorization
-app.use(require("./middlewares/authorization"));
+app.use("/api*", require("./middlewares/authorization"));
 app.use('/api/user', require("./routes/api/user"));
 
-
-/**
- * facebook authentications
- */
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: ['email']}));
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/login' }));
 
 // catch 404 and handle it
 app.use(function (req, res, next) {

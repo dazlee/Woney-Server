@@ -1,14 +1,15 @@
-const app = require("../server/app");
 const debug = require('debug')('cha:server');
 const logger = require("../server/lib/logger");
-const config = require("../server/config");
 const http = require("http");
 
-const port = config.port || 3000;
-app.set("port", port);
+const port = process.env.PORT;
+const app = require("../server/app");
+
+// connect to mongoDB
+require("../server/db/mongodb").connect();
 
 const server = http.createServer(app);
-server.listen(port, function () {
+server.listen(process.env.PORT, function () {
     logger.info("start server on port " + port);
 });
 server.on('error', onError);
