@@ -12,9 +12,9 @@
                     {/games}
                     </select>
                 </div>
-                <button type="button" class="btn btn-default">匯出excel</button>
+                <button id="export_excel" type="button" class="btn btn-default">匯出excel</button>
             </div>
-            <table class="table fixed-layout tablesorter">
+            <table id="export_table" class="table fixed-layout tablesorter">
                 <thead>
                     <tr>
                         <th>Bigger Winner</th>
@@ -76,5 +76,8 @@
         {/unless}
     </div>
 </div>
-
 {/body}
+{<post_script}
+<script src="/js/FileSaver.min.js"></script>
+<script src="/js/csv-export.js"></script>
+{/post_script}

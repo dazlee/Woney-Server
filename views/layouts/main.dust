@@ -74,5 +74,6 @@
 			$(".tablesorter").tablesorter();
 		});
 	</script>
+	{+post_script/}
 </body>
 </html>
