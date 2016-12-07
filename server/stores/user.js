@@ -39,7 +39,7 @@ function signUser(user) {
         expiresIn: "2 days" // expires in 24 hours
     });
     const newUser = user.toObject();
-    newUser.accessToken = token;
+    newUser["x-access-token"] = token;
     return newUser;
 }
 function signup (attributes) {
