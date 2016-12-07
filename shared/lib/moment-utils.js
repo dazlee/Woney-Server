@@ -20,7 +20,7 @@ function addDays (date, days) {
 }
 
 function getNextSunday() {
-    return moment().weekday(7).hour(0).minute(0).format("YYYY/MM/DD HH:mm");
+    return moment().weekday(7).hour(0).minute(0).format("YYYY-MM-DD HH:mm");
 }
 
 module.exports = {
