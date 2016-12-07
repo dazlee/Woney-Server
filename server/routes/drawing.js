@@ -92,7 +92,7 @@ router.post("/:gameId/finish", (req, res) => {
     .then((game) => {
         return GameStore.createGame({
             startTime: game.endTime,
-            endTime: momentUtils.addDays(game.endTime, 7),
+            endTime: momentUtils.getNextSunday(),
             series: game.series + 1,
             woney: 0,
         });
