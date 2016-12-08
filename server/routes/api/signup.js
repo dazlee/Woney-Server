@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
     })
     .catch((error) => {
         logger.error("error signup ", error);
-        res.json(error);
+        res.status(400).json(error);
         res.end();
     });
 });

@@ -17,10 +17,13 @@ router.get("/me", (req, res) => {
 });
 router.post("/me/gain", (req, res) => {
     const woney = req.body.woney,
-          addedWoneys = req.body.addedWoneys;
-    UserStore.updateUser(req.userId, {
-        woney
-    }, {
+          addedWoneys = req.body.addedWoneys,
+          isDailyEarn = req.body.isDailyEarn;
+    var doc = {woney};
+    if (isDailyEarn) {
+        doc.lastDailyEarn = new Date();
+    }
+    UserStore.updateUser(req.userId, doc, {
         // inc attributes
         totalWoney: addedWoneys
     })

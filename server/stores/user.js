@@ -102,7 +102,9 @@ function getUser (attributes) {
                 resolve(newUser);
             })
             .catch(function (error) {
-                resolve(user);
+                const newUser = user.toObject();
+                newUser.bets = 0;
+                resolve(newUser);
             });
         });
     });

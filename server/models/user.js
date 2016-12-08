@@ -45,6 +45,9 @@ const UserSchema = new Schema({
         type: Number,
         default: 0,
     },
+    lastDailyEarn: {
+        type: Date,
+    },
     wonTimes: {
         type: Number,
         default: 0,
