@@ -36,9 +36,12 @@ passport.deserializeUser(function(_id, done) {
 
 function signUser(user) {
     const token = jwt.sign({userId: user._id.toString()}, config.secret, {
-        expiresIn: "2 days" // expires in 24 hours
+        expiresIn: "60 days" // expires in 60 days
     });
-    const newUser = user.toObject();
+    var newUser = user;
+    if (user.toObject) {
+        newUser = newUser.toObject();
+    }
     newUser["x-access-token"] = token;
     return newUser;
 }
@@ -46,6 +49,7 @@ function signup (attributes) {
     return new Promise((resolve, reject) => {
         getUser({
             email: attributes.email,
+            facebookId: attributes.facebookId
         })
         .then(function (user) {
             resolve(signUser(user));
