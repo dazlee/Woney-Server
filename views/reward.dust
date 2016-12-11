@@ -6,9 +6,13 @@
             <div class="form-group col-md-12">
                 <h3>{title}</h3>
             </div>
-            <div class="form-group col-md-6">
-                <h4>目前顯示：<strong class="text-red">{@formatNumber number=game.reward/}</strong></h4>
+            <div class="form-group col-md-7">
+                <h4>目前大獎金額顯示：<strong class="text-red">{@formatNumber number=game.reward/}</strong></h4>
                 <input type="number" class="form-control" name="reward" value="0"/>
+            </div>
+            <div class="form-group col-md-7">
+                <h4>目前二獎金額顯示：<strong class="text-red">{@formatNumber number=game.secondReward/}</strong></h4>
+                <input type="number" class="form-control" name="secondReward" value="0"/>
             </div>
             <div class="form-group col-md-12">
                 <input type="text" name="gameId" value="{game._id}" class="hidden"/>

@@ -72,6 +72,7 @@ function updateGameReward(gameId, attributes) {
     return new Promise((resolve, reject) => {
         const reward = {
             reward: attributes.reward,
+            secondReward: attributes.secondReward
         };
         GameModel.findByIdAndUpdate(gameId, {
             $set: reward

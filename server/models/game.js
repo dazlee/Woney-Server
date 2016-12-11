@@ -19,6 +19,9 @@ const UserSchema = new Schema({
             type: String,
             required: true,
         },
+        displayName: {
+            type: String,
+        },
     },
     email: {
         type: String,
@@ -49,6 +52,10 @@ const GameSchema = new Schema({
         default: false,
     },
     reward: {
+        type: Number,
+        default: 0,
+    },
+    secondReward: {
         type: Number,
         default: 0,
     },

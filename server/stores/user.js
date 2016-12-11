@@ -60,6 +60,7 @@ function signup (attributes) {
                 name: {
                     firstName:  attributes.firstName,
                     lastName:   attributes.lastName,
+                    displayName:   attributes.displayName,
                     middleName: attributes.middleName,
                 },
                 email:      attributes.email,

@@ -23,9 +23,10 @@ router.get("/", (req, res) => {
 });
 router.post("/", (req, res) => {
     const gameId = req.body.gameId,
-          reward = req.body.reward;
+          reward = req.body.reward,
+          secondReward = req.body.secondReward;
     GameStore.updateGameReward(gameId, {
-        reward
+        reward, secondReward
     })
     .then(function (game) {
         res.redirect("/admin/reward");
