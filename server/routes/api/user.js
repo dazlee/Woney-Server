@@ -18,10 +18,14 @@ router.get("/me", (req, res) => {
 router.post("/me/gain", (req, res) => {
     const woney = req.body.woney,
           addedWoneys = req.body.addedWoneys,
-          isDailyEarn = req.body.isDailyEarn;
+          isDailyEarn = req.body.isDailyEarn,
+          isFbShare = req.body.isFbShare;
     var doc = {woney};
     if (isDailyEarn) {
         doc.lastDailyEarn = new Date();
+    }
+    if (isFbShare) {
+        doc.lastFbShare = new Date();
     }
     UserStore.updateUser(req.userId, doc, {
         // inc attributes
