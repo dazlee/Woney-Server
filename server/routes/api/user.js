@@ -21,10 +21,10 @@ router.post("/me/gain", (req, res) => {
           isDailyEarn = req.body.isDailyEarn,
           isFbShare = req.body.isFbShare;
     var doc = {woney};
-    if (isDailyEarn) {
+    if (parseInt(isDailyEarn) === 1) {
         doc.lastDailyEarn = new Date();
     }
-    if (isFbShare) {
+    if (parseInt(isFbShare) === 1) {
         doc.lastFbShare = new Date();
     }
     UserStore.updateUser(req.userId, doc, {
