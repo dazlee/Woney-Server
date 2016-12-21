@@ -20,7 +20,7 @@
                         <th>Bigger Winner</th>
                         <th>Second Winner</th>
                         <th>FB Name</th>
-                        <th>FB Id</th>
+                        <th colspan="2">FB Id</th>
                         <th>Bet Time</th>
                         <th>累積Woney Credit</th>
                         <th>剩餘woney Credit</th>
@@ -43,7 +43,7 @@
                         <td>
                             {@fullName firstName="{name.firstName}" lastName="{name.lastName}"/}
                         </td>
-                        <td>
+                        <td colspan="2">
                             {facebookId}
                         </td>
                         <td>
