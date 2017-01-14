@@ -23,6 +23,10 @@ function getNextSunday() {
     return moment().weekday(7).hour(0).minute(0).format("YYYY-MM-DD HH:mm");
 }
 
+function getNextSundayWithHours(hours) {
+    return moment().weekday(7).hour(hours).minute(0).format("YYYY-MM-DD HH:mm");
+}
+
 module.exports = {
-    relativeDateTime, simpleFormattedDate, formatDate, addDays, getNextSunday
+    relativeDateTime, simpleFormattedDate, formatDate, addDays, getNextSunday, getNextSundayWithHours
 };
