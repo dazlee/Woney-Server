@@ -30,6 +30,7 @@ function addUserToBlackList (facebookId) {
 function getBlacklist () {
 	return new Promise((resolve, reject) => {
 		BlackUserModel.find({})
+		.lean(true)
 		.exec(function (error, blackUsers) {
 			if (error) {
 				reject(error);
