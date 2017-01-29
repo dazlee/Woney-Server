@@ -52,6 +52,11 @@
 					<span><i class="fa fa-money" aria-hidden="true"></i>得獎名單</span>
 				</a>
 			</li>
+			<li {@eq key=route value="blacklist"}class="active"{/eq}>
+				<a href="/admin/black-list">
+					<span><i class="fa fa-money" aria-hidden="true"></i>黑名單</span>
+				</a>
+			</li>
 			<li role="presentation" class="divider"></li>
 			<li><a href="/logout"><i class="fa fa-logout" aria-hidden="true"></i> 登出</a></li>
 		</ul>

@@ -1,4 +1,5 @@
 const BetsModel = require("../models/bets");
+const BlackUserModel = require("../models/black-user");
 
 function placeBets(data) {
     const gameId = data.gameId,
@@ -62,9 +63,42 @@ function getBetUsersFromGame(attributes) {
         });
     });
 }
+function getBetUsersFromGameInWhiteList(attributes) {
+    const gameId = attributes.gameId;
+    return new Promise(function (resolve, reject) {
+		BlackUserModel.find({}, function (error, blackUserList) {
+			var blackUserIds = [];
+			if (blackUserList) {
+				blackUserIds = blackUserList.map(function (blackUser) {
+					return blackUser.userId;
+				});
+			}
+
+			BetsModel.find({
+	            gameId,
+				userId: {
+					$nin: blackUserIds
+				}
+	        })
+	        .lean(true)
+	        .exec(function (error, betsDoc) {
+	            if (error) {
+	                reject(error);
+	                return;
+	            }
+	            const users = betsDoc.map(function(bets) {
+	                bets.user.bets = bets.bets;
+	                return bets.user;
+	            });
+	            resolve(users);
+	        });
+		});
+    });
+}
 
 module.exports = {
     placeBets,
     getBets,
     getBetUsersFromGame,
+	getBetUsersFromGameInWhiteList,
 };

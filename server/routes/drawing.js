@@ -58,7 +58,7 @@ router.get("/:gameId", (req, res) => {
     })
     .then(function (_game) {
         game = _game;
-        return BetsStore.getBetUsersFromGame({
+        return BetsStore.getBetUsersFromGameInWhiteList({
             gameId: gameId,
         });
     })

@@ -1,4 +1,5 @@
 const express = require("express");
+const logger = require("../../lib/logger");
 const router = express.Router();
 const UserStore = require("../../stores/user");
 const BetsStore = require("../../stores/bets");
@@ -27,6 +28,9 @@ router.post("/me/gain", (req, res) => {
     if (parseInt(isFbShare) === 1) {
         doc.lastFbShare = new Date();
     }
+	if (addedWoneys > 10 || woney > 2000) {
+		logger.warn("[Woney]someone is gaining too many woney, userId is", req.userId, ", woney doc is", doc, ", addedWoneys is", addedWoneys);
+	}
     UserStore.updateUser(req.userId, doc, {
         // inc attributes
         totalWoney: addedWoneys

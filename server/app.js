@@ -42,6 +42,7 @@ app.use('/admin', require("./routes/dashboard"));
 app.use('/admin/drawing', require("./routes/drawing"));
 app.use('/admin/reward', require("./routes/reward"));
 app.use('/admin/winners', require("./routes/winners"));
+app.use('/admin/black-list', require("./routes/black-users"));
 
 // apis
 // without user token authentications
